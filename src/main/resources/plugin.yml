@@ -1,0 +1,170 @@
+name: RedProtect
+main: br.net.fabiozumbi12.RedProtect.RedProtect
+version: 6.5.3
+author: FabioZumbi12
+description: Allows players to define fields to protect their houses.
+softdepend: [AsyncWorldEdit, WorldEdit, BossbarAPI, MyChunk, MyPet, Multiverse-Core, mcMMO, SkillAPI, MagicCarpet, PvPManager, Essentials, dynmap]
+url: http://dev.bukkit.org/bukkit-plugins/region-protect-plus/
+commands:
+  RedProtect:
+    description: "Main command for redprotect."
+    usage: "Error, use '/rp ?' to see the commands."
+    aliases: [rp, redp, rprotect, regionprotect, regionp]
+permissions:
+  redprotect.*:
+    description: "All redprotect commands."
+    default: op
+    children:
+      redprotect.user: true
+      redprotect.admin: true
+  redprotect.user:
+    description: "Recommended User permissions."
+    default: true
+    children:
+      redprotect.create: true
+      redprotect.near: true
+      redprotect.own.border: true
+      redprotect.own.addmember: true
+      redprotect.own.delete: true
+      redprotect.own.info: true
+      redprotect.own.addleader: true
+      redprotect.own.addadmin: true
+      redprotect.own.removemember: true
+      redprotect.own.removeadmin: true
+      redprotect.own.removeleader: true
+      redprotect.own.rename: true
+      redprotect.own.welcome: true
+      redprotect.own.limit: true
+      redprotect.own.claimlimit: true
+      redprotect.own.list: true
+      redprotect.own.priority: true
+      redprotect.own.flaggui: true
+      redprotect.own.near: true
+      redprotect.infowand: true
+  redprotect.flag.all:
+    description: "Access to edit all flags."
+    default: true
+    children:
+      redprotect.flag.pvp: true
+      redprotect.flag.chest: true
+      redprotect.flag.lever: true
+      redprotect.flag.button: true
+      redprotect.flag.door: true
+      redprotect.flag.spawn-monsters: true
+      redprotect.flag.passives: true
+      redprotect.flag.flow: true
+      redprotect.flag.fire: true
+      redprotect.flag.spawn-animals: true
+      redprotect.flag.minecart: true
+      redprotect.flag.allow-home: true
+      redprotect.flag.allow-magiccarpet: true
+      redprotect.flag.smart-door: true
+      redprotect.flag.allow-potions: true
+      redprotect.flag.mob-loot: true
+      redprotect.flag.flow-damage: true
+  redprotect.vip:
+    description: "Recommended Vip permissions."
+    default: false
+    children:
+      redprotect.own.teleport: true
+      redprotect.limit.claim.unlimited: true
+      redprotect.limit.blocks.unlimited: true
+  redprotect.ranked:
+    description: "Recommended Ranked permissions."
+    default: false
+    children:
+      redprotect.limit.blocks.10000: true
+      redprotect.limit.claim.200: true
+  redprotect.flag.special:
+    description: "Access to edit all admin flags."
+    default: op
+    children:
+      redprotect.admin.flag.player-enter-command: true
+      redprotect.admin.flag.server-enter-command: true
+      redprotect.admin.flag.player-exit-command: true
+      redprotect.admin.flag.server-exit-command: true
+      redprotect.admin.flag.invincible: true
+      redprotect.admin.flag.effects: true
+      redprotect.admin.flag.minefarm: true
+      redprotect.admin.flag.treefarm: true
+      redprotect.admin.flag.sign: true
+      redprotect.admin.flag.enter: true
+      redprotect.admin.flag.up-skills: true
+      redprotect.admin.flag.can-back: true
+      redprotect.admin.flag.enderpearl: true
+      redprotect.admin.flag.allow-mod: true
+      redprotect.admin.flag.enter-with-itens: true
+      redprotect.admin.flag.deny-with-itens: true
+      redprotect.admin.flag.allow-create-portal: true
+      redprotect.admin.flag.portal-exit: true
+      redprotect.admin.flag.portal-enter: true
+      redprotect.admin.flag.allow-cmds: true
+      redprotect.admin.flag.allow-break: true
+      redprotect.admin.flag.allow-place: true
+      redprotect.admin.flag.deny-cmds: true
+      redprotect.admin.flag.can-pet: true
+      redprotect.admin.flag.can-projectiles: true
+      redprotect.admin.flag.can-hunger: true
+      redprotect.admin.flag.player-damage: true
+      redprotect.admin.flag.can-fly: true
+      redprotect.admin.flag.gamemode: true
+      redprotect.admin.flag.pvparena: true
+      redprotect.admin.flag.forcepvp: true
+  redprotect.admin:
+    description: "Recommended Admin permsisions."
+    default: op
+    children:
+      redprotect.admin.delete: true
+      redprotect.admin.removeadmin: true
+      redprotect.admin.addadmin: true
+      redprotect.admin.removeleader: true
+      redprotect.admin.addleader: true
+      redprotect.admin.addmember: true
+      redprotect.admin.removemember: true
+      redprotect.admin.info: true
+      redprotect.admin.priority: true
+      redprotect.admin.rename: true
+      redprotect.admin.welcome: true
+      redprotect.admin.define: true
+      redprotect.admin.claim: true
+      redprotect.admin.reload: true
+      redprotect.admin.save-all: true
+      redprotect.admin.load-all: true
+      redprotect.admin.teleport: true
+      redprotect.admin.copyflag: true
+      redprotect.admin.setconfig: true
+      redprotect.admin.settp: true
+      redprotect.admin.deltp: true
+      redprotect.admin.flaggui: true
+      redprotect.admin.flag: true
+      redprotect.admin.value: true
+      redprotect.admin.expandvert: true
+      redprotect.admin.setmaxy: true
+      redprotect.admin.setminy: true
+      redprotect.admin.border: true
+      redprotect.teleport.other: true
+      redprotect.flag.special: true
+      redprotect.other.limit: true
+      redprotect.other.claimlimit: true
+      redprotect.limit.claim.unlimited: true
+      redprotect.limit.blocks.unlimited: true
+      redprotect.bypass: true
+      redprotect.bypass.nether-roof: true
+      redprotect.bypass.addleader: true
+      redprotect.magicwand: true
+      redprotect.update: true
+      redprotect.regen: true
+      redprotect.signspy: true
+      redprotect.eco.use: true
+      redprotect.eco.admin: true
+      redprotect.eco.setvalue: true
+      redprotect.eco.others: true
+      redprotect.gui.edit: true
+      redprotect.use-claim-modes: true
+  redprotect.eco.use:
+    description: "Economy permissions."
+    default: false
+    children:
+      redprotect.eco.buy: true
+      redprotect.eco.sell: true
+      redprotect.eco.cancelbuy: true
